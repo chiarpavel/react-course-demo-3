@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+import Header from './Header';
+import Content from './Content';
+import ContainerTodo from './container-todo';
+import ContextTodo from './context-todo';
+import ReduxTodo from './redux-todo';
+
+const initialTodos = [
+  {
+    text: 'I\'m an item',
+    done: false,
+  },
+  {
+    text: 'I\'m also an item',
+    done: false,
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="demo" />
+
+      <Content>
+        <ContainerTodo initialTodos={initialTodos} />
+        <ContextTodo initialTodos={initialTodos} />
+        <ReduxTodo />
+      </Content>
     </div>
   );
 }

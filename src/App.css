@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,17 +15,87 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vh);
   color: white;
+}
+
+.App-content {
+  background-color: lightgray;
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: calc(10px + 2vh);
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.TodoList {
+  width: 20vw;
+  height: 60vh;
+  background-color: gray;
+  box-shadow: 0 3px 3px;
+  display: flex;
+  flex-direction: column;
+  padding: 1vmin;
+  box-sizing: border-box;
+}
+
+.TodoList .ItemsContainer {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.TodoItem {
+  background-color: white;
+  display: flex;
+  padding: 1vmin;
+}
+
+.TodoItem + .TodoItem {
+  margin-top: 1vmin;
+}
+
+.TodoItem .Checkbox {
+  flex-grow: 0;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  font-size: calc(10px + 2vh);
+  margin-right: 1vmin;
+  cursor: pointer;
+}
+
+.TodoItem .RemoveButton {
+  flex-grow: 0;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  font-size: calc(10px + 2vh);
+  margin-right: 1vmin;
+  cursor: pointer;
+}
+
+.TodoItem .Text {
+  display: flex;
+  flex-grow: 1;
+}
+
+.TodoItem.Checked .Text {
+  text-decoration: line-through;
+}
+
+.CreateButton {
+  background-color: white;
+  padding: 1vmin;
+  font-size: calc(10px + 2vh);
+  margin-top: 2vmin;
+  cursor: pointer;
 }
 
 @keyframes App-logo-spin {
